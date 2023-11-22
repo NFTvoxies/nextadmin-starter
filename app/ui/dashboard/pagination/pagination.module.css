@@ -1,0 +1,26 @@
+.container{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+.Previous{
+    cursor: pointer;
+    padding: 5px 9px;
+    border: none;
+    border-radius: 8px;
+    
+}
+
+.Previous:disabled{
+    cursor: not-allowed;
+
+}
+
+.Next{
+    cursor: pointer;
+    padding: 5px 9px;
+    border: none;
+    border-radius: 8px;
+}
