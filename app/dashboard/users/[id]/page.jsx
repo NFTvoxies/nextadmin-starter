@@ -28,12 +28,12 @@ const ViewUserPage = async({params}) => {
           <label>Address</label>
           <textarea type="text" name="address" placeholder={user.address} />
           <label>Is Active?</label>
-          <select name="active" id="active" className={styles.list}>
+          <select name="isActive" id="isActive" className={styles.list}>
             <option value={true} selected={user.isActive}>Yes</option>
             <option value={false} selected={!user.isActive}>No</option>
           </select>
           <label>Is Admin?</label>
-          <select name="admin" id="admin" className={styles.list}>
+          <select name="isAdmin" id="isAdmin" className={styles.list}>
             <option value={true} selected={user.isAdmin}>Yes</option>
             <option value={false} selected={!user.isAdmin}>No</option>
           </select>

@@ -1,12 +1,7 @@
-
 import { addUser } from "@/app/lib/actions";
 import styles from "@/app/ui/dashboard/users/addUser/addUser.module.css";
 
-
 const AddUserPage = () => {
-  
-
-
   return (
     <div className={styles.container}>
       <form action={addUser} className={styles.form}>
@@ -32,28 +27,26 @@ const AddUserPage = () => {
           placeholder="phone"
           name="phone"
         />
-        <select name="active" id="active" className={styles.list}>
-          <option value={false} selected>
-            Is Active?
-          </option>
+        <select name="isActive" id="isActive" className={styles.list}>
+          <option >Is Active?</option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>
-        <select name="admin" id="admin" className={styles.list}>
-          <option value={true}>Is Admin?</option>
+        <select name="isAdmin" id="isAdmin" className={styles.list}>
+          <option>Is Admin?</option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>
-        <input type="file" name="img" placeholder="put your image here" />
+
         <textarea
-          name="description"
-          id="desc"
+          name="address"
+          id="address"
           cols="30"
           rows="16"
           placeholder="address"
           className={styles.desc}
         ></textarea>
-        <button type="submit" className={styles.submit}  >
+        <button type="submit" className={styles.submit}>
           Submit
         </button>
       </form>

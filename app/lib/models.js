@@ -17,7 +17,6 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      min: 5,
     },
     img: {
       type: String,
@@ -32,7 +31,6 @@ const userSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      unique: true,
     },
     address: {
       type: String,
@@ -57,10 +55,18 @@ const productSchema = new mongoose.Schema(
       required: true,
       min: 0,
     },
+    stock: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
     img: {
       type: String,
     },
-    stock: {
+    color: {
+      type: String,
+    },
+    size: {
       type: String,
     },
   },
