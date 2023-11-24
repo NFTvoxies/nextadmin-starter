@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
 import { signIn } from "../auth";
 
+
 // ADD USER
 
 export const addUser = async (formData) => {
@@ -27,9 +28,10 @@ export const addUser = async (formData) => {
       isAdmin,
       isActive,
     });
+
     await newUser.save();
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.log(err);
     throw new Error("Failed to add user!!");
   }
   revalidatePath("/dashboard/users");
@@ -61,8 +63,8 @@ export const UpdateUser = async (formData) => {
     );
 
     await User.findByIdAndUpdate(id, updateFields);
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.log(err);
     throw new Error("Failed to  Update user!!");
   }
   revalidatePath("/dashboard/users");
@@ -86,8 +88,8 @@ export const addProduct = async (formData) => {
       size,
     });
     await newProduct.save();
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.log(err);
     throw new Error("Failed to add Product !!");
   }
   revalidatePath("/dashboard/products");
@@ -161,8 +163,14 @@ export const deleteUser = async (formData) => {
 export const authenticate = async (prevState, formData) => {
   const { username, password } = Object.fromEntries(formData);
   try {
-    await signIn("credentials", { username, password });
-  } catch (err) {
-    return "wrong username or password";
+    await signIn('credentials', { username, password });
+   
+  } catch (error) {
+    if (error.message.includes('CredentialsSignin')) {
+      return <div style={{color:"red", fontWeight:"400"}}>
+      Wrong Username or Password
+      </div>
+    }
+    throw error;
   }
 };

@@ -28,7 +28,7 @@ const AddUserPage = () => {
           name="phone"
         />
         <select name="isActive" id="isActive" className={styles.list}>
-          <option >Is Active?</option>
+          <option>Is Active?</option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>
@@ -43,7 +43,7 @@ const AddUserPage = () => {
           id="address"
           cols="30"
           rows="16"
-          placeholder="address"
+          placeholder="Address"
           className={styles.desc}
         ></textarea>
         <button type="submit" className={styles.submit}>

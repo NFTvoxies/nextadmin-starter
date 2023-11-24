@@ -54,8 +54,8 @@ const Users = async ({ searchParams }) => {
                   <button className={styles.view}>View</button>
                 </Link>
                 <form action={deleteUser}>
-                  <input type="hidden" name="id" value={user.id}/>
-                <button className={styles.delete}>Delete</button>
+                  <input type="hidden" name="id" value={user.id} />
+                  <button className={styles.delete}>Delete</button>
                 </form>
               </td>
             </tr>

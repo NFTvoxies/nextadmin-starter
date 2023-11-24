@@ -90,11 +90,11 @@ const Sidebar = async () => {
           src={user.img || "/noavatar.png"}
           alt=""
           width="50"
-          height={"50"}
+          height="50"
         />
         <div className={styles.userDetail}>
           <span className={styles.username}>{user.username}</span>
-          <span className={styles.userTitle}>Admin</span>
+          <span className={styles.userTitle}>Administrator</span>
         </div>
       </div>
 
@@ -110,7 +110,7 @@ const Sidebar = async () => {
       </ul>
       <form
         action={async () => {
-          "use server";
+          'use server';
           await signOut();
         }}
       >
