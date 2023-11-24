@@ -73,6 +73,34 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const transactionSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    status: {
+      type: String,
+      
+    },
+    date: {
+      type: Date, // Assuming this should be a date field
+      default: Date.now,
+    },
+    img: {
+      type: String, // Add this field to store the image URL
+    },
+    amount: {
+      type: Number,
+    },
+  },
+  { timestamps: true }
+);
+
 export const User = mongoose.models.User || mongoose.model("User", userSchema);
 export const Product =
   mongoose.models.Product || mongoose.model("Product", productSchema);
+
+  export const Transaction =
+  mongoose.models.Transaction || mongoose.model("Transaction", transactionSchema);

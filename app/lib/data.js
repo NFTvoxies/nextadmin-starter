@@ -1,4 +1,5 @@
-import { Product, User } from "./models";
+
+import { Product, Transaction, User } from "./models";
 import { connectToDB } from "./utils";
 
 export const fetchUsers = async (q, page) => {
@@ -62,6 +63,20 @@ export const fetchProduct = async (id) => {
   } catch (err) {
     console.log(err);
     throw new Error("Failed to fetch product");
+  }
+};
+
+export const fetchTransactions = async () => {
+  
+  try {
+    connectToDB();
+    
+    const transactions = await Transaction.find()
+      
+      return { transactions };
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch tansactions");
   }
 };
 
